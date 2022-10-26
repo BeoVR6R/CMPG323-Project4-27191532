@@ -101,7 +101,7 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="categoryName" />
       <Variable x:TypeArguments="x:String" Name="categoryDesc" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dtCateGo" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtCategor" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -138,7 +138,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Category&quot;)]" SaveTo="[dtCateGo]" />
+                      <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Category&quot;)]" SaveTo="[dtCategor]" />
                     </Sequence>
                   </ActivityAction>
                 </ueab:ExcelApplicationCard.Body>
@@ -148,7 +148,7 @@
         </ActivityAction>
       </ueab:ExcelProcessScopeX.Body>
     </ueab:ExcelProcessScopeX>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCateGo]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,3005" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCategor]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,3005" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -228,7 +228,7 @@
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Categories" DesignTimeRectangle="342, 376, 107, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Bang bang ban'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' /&gt;" Guid="4893b93f-1806-4e0e-a406-cbea37e34a1b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG8AAAAZCAYAAAA/vnC8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ8SURBVGhD7ZY9jsIwEIU5zp6HgntsTcsx0qI9AAUSzTZsSiRa+hUSHMLrv3FmxhNsogXHkp9kodjO2PO+scNCNVWrBq9iNXgVq8GrWA1exWrwKlaDV7Hqgnc+qsXqqHr/OD/d1Xa9U8v93T+/VhTe7aSWq502CLcZmdXgEQnwDmp7889afacBrk/q6p+LqsEjSsJzfTMxrMEjSsMTDLOnEV2tm7MfMAoxLmqD5sQJ0fFFd3Fx9e+owl4Sse0ehnF+c8A61/1hmCMUBR3XOZ0Ff4gGeKnYDz2EPFkeZI5WAp4zicPZYLPsQuidsCDaMJ/j42LTQ7JJeCy2Xw/H6jtsljMUxwXjhnfiOW4/OA4UTBoejQ3r0T0/9BDyREUX7yfnD0vye8cA+xi0Suh1YjcixM07ebF5Y/FAfNyuw+fb2GCOULRGNrcMeFEOI/GC2LiYZxwj89pkfQLkEFRMkMIz5uHKBOXBo9VnJfS7akeNw+Pr4Bg2B2GdTHhxbkL/Iw/FPKfAE4ynMFnQ0vDAFBRHPHkF4SU9fA28OMBUePE15+ZMgYdhSFfoNHg8Ty07ZwI84kmGh/8Gj2w43pyroufggTk4jjVY96Xh6TkYju8bTdyv9RQ8LZcXNtCZlwOP7Af6wvoZHvIcrLLguUBDY0HYnM2ZBc2BZ8TimDHRVCxIygMb9uDHvcAM27Rp/bMnz4vEMWNibliQ5yVAhD2EYjNKeTgJXmEl4ZVWEt57FeB9fH4PlfLCNi5aWdK772pjwt9O6b13ta+fX7ufMifPVDA5Yfy7UF59x06Yv6r5FV1Sha5Nd8pIRc0InFH4A4XanMAZzeqb1/ScGrxqpdQfMQ4pZcp7uPYAAAAASUVORK5CYII=" InformativeScreenshot="c4cce9e7e911dd2a14e1c8a65b84f4d2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Categories - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target DesignTimeRectangle="330, 313, 305, 50" ElementType="Text" FriendlyName="'Category Name'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='                 Category Name             ' check:innerText='Category Name' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATUAAAA2CAYAAACm/A4eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPLSURBVHhe7dlLTuNAEIDhucosZsGxEAtOkkWOgpSjBHEDFiyIBIfwtJ1+VFdX24DDTFz8n1TSjHHix6j/OMyvAQAcyVF7fnllGIbZ/PCkBsAVogbAFaIGwBWiBsAVogbAFaIGwBWiBsAVogbAFaIGwBWiBsAVogbAFaIGwBWiBsAVogbAFaIGwBWiBsAVogbAFaIGwBWiBsCVC0XtfXi4uxl+/1Gzf4o//8GO+3I/7g7DW9ycPO77PwPweeujJhetns9E7XQYbqfX7YfHuMkFdX9uD+/xB2dEDbisdVHLIRrnfng4xe2Tp2H3iai9He7j+/iOmr5PRA24rFVRywuyCZpiPc3lRdz56ioWeQleHB3LKq43w+4Yghr/XD8ZGcdSMZGReUzHDccr51Bfa97ei1K+9vvhNh1bnL8VtXJfy8jrqD8AyrXmc5v9sAnU/XL3QYIfbUXUxGJaeCJropRmWsjzUbMW+DTpmM0CrSfHYHa/sqjN443HEq8vgSnnrr9WZiJqD6dyz3bH84/bqHXuR5h0DBnYHMo0d2Gb/Pu0TQTX+oCZhrDBh69HTUZiIWqNaqGfN9VPH5E4RopA2Xber0SovE5GNIXA2s8KlYxaPmbUBCi/3ngaSvS15r+r85fhUfQ+8vqaOIbpX7MIZv43K9v09QJb9E+e1KoAVrMQte5TxTjja61FOtJfP3v7tdvbEAgqUPmc566/CXh9TCtqMlrVNFEr5/ixbfKrajsphsCWrYiaWJxWADK5kOJ+zUJfWpT2yN+dzUett99M1Mwnp7L/7ij/HH9sMa7VjHw6ngx555y+HLXuh0uc6t4A27TqPwrq6JTFNBkX0LhI8kKyFtt81OQCt8Nhh1WeV/+rWCAWebOfGTXx3vl3V+q6NStqQX3vxvdTwcqBEde4NmrduAN+rIraqMTCmCpq1oiFLp9QxpkWsIxWPfmrkn6dmrzf7HmUECxFrXmfpTh0olYHOUwTLGNWR23m/XvXC2zM6qhNOsHIT1cyPOPi6Sz0KpBikVnhzLEK6oU6LmD99TMRTyppVJQWoxaU89GhMnSjFsj71rne8fz1Oa2J2sT6IJi5XmBLLhO1ayMW7Xf8j95Hwgfg/9h+1MLTzq77NKaeUC5BPF3VT4EAroGLqPV+V3bRpzT9lY2nNOAqOY3aNzyhyagRNOBq+fydGoAfi6gBcIWoAXCFqAFwhagBcIWoAXCFqAFwhagBcIWoAXCFqAFwhagBcIWoAXCFqAFwhagBcCVH7fnllWEYZvND1BiGcTV8/QTgClED4Mgw/AX4EQFrxYB/vAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>

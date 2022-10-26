@@ -9,10 +9,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1354,4295</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1354,4150</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessV2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="62">
+    <scg:List x:TypeArguments="x:String" Capacity="46">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -62,7 +62,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="104">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -122,10 +122,9 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Zone" sap:VirtualizedContainerService.HintSize="760,4085" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="dtZonev2" />
-      <Variable x:TypeArguments="x:String" Name="zoneID" />
       <Variable x:TypeArguments="x:String" Name="zoneName" />
       <Variable x:TypeArguments="x:String" Name="zoneDesc" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtZone" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -162,7 +161,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Zone&quot;)]" SaveTo="[dtZonev2]" />
+                      <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Zone&quot;)]" SaveTo="[dtZone]" />
                     </Sequence>
                   </ActivityAction>
                 </ueab:ExcelApplicationCard.Body>
@@ -172,29 +171,29 @@
         </ActivityAction>
       </ueab:ExcelProcessScopeX.Body>
     </ueab:ExcelProcessScopeX>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtZoneV2]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,3005" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtZone]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,3005" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentRowZone" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="548,2880" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,2880" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="ZoneName" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="486,196" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[currentRowZone]">
+            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="ZoneName" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[currentRowZone]">
               <ui:GetRowItem.Value>
                 <OutArgument x:TypeArguments="x:String">[zoneName]</OutArgument>
               </ui:GetRowItem.Value>
             </ui:GetRowItem>
-            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="ZoneDescription" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="486,196" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[currentRowZone]">
+            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="ZoneDescription" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[currentRowZone]">
               <ui:GetRowItem.Value>
                 <OutArgument x:TypeArguments="x:String">[zoneDesc]</OutArgument>
               </ui:GetRowItem.Value>
             </ui:GetRowItem>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Home Page - Connected Office: Device Management" sap:VirtualizedContainerService.HintSize="486,2286" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Home Page - Connected Office: Device Management" sap:VirtualizedContainerService.HintSize="434,2286" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -252,7 +251,7 @@
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Zones" DesignTimeRectangle="342, 376, 130, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Boilermaker Room'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' /&gt;" Guid="9991121f-7181-405a-b8a0-2adda1207a0b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIYAAAAZCAYAAAD0SVYHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALNSURBVGhD7ZY9btwwEIX3ODnPFr5Hard7DLc+gQsD26Qx3AQwsO0ivQG7yBEYkjOU5ufR3FAIICDzAcRCFDWcefOW0iEFASCMEUDCGAEkjBFAwhgBJIwRQMIYAeQfGeMzPd4/pcPDlS4/3tLx7pweP+hyd1xe0uHuJb3yZWCNURuYG6rGjGBhDMw1nZy+T+n4/Mn39wMwhm7g60NO/v4tvfP1FGEMhoxxuvBlgf+MezPH0Bg0t1G0MAYDjJF5fz6vp+tOGBsDimaPRNt0epUs/wJoDBNDnUrt+Su9kvL9KmaLcym/7VnOreZp5gT15Fvum+bYGus+eZ3Mqc21oRrZydeBjVFzM8aoZunux6ia87An+wa9Bsa48ejjTdZ1I2P4uPqVxd8o1kytOW4dmJNC5udOLl8RWxmDclP1ufztHp18HUBPm0uGTCybxfFF48k4g+dm9cqMPz5FMgXk7oKep816xoBHp1qDk/UNygBhdaMRpkHLepq3+5balFEKao9Ovg6OL8ctNRbUPDBYxcxv0OvGV0mbIwF8QpmyzriwZwxyNhp6H9eMbn7GBGiuPqv308Y4pyNsLjfdPEtDG8Pl60CGNHoqHSVC+1qLqY9RJt6g19gYqmiRnEUVZIQyceE/UNERerJQMqJ8DjWIjeGa8kXNC518Hf6fXk9PuafSUSLy2J8xWGRwZOp5I5SJ68RwdISeKhQdu8gYZT3ta3Pr1bzSydfRz+XLZhbUPIpTMPNTehF/+SrJ1DVGBLtmYAwYoxTVM1ZjqlAfi04QZIwCMEe9bxqRc1k/aLcYI2P0o/xkTZyTMGf341PmPaUXMf74tEEKbp1dY4RCCboY8n5H6NlCzV6ni2mQi0H3VU51zRpDr99ojNZ40dRm3jZQbDKHWGdPtVm9MtoYQcAsxvj2/Yd2X4z/cvz89bv6IU6MABLGCCBhjAASxggAKf0BobdqNTpDEeAAAAAASUVORK5CYII=" InformativeScreenshot="545debbddf0fd5a325e46ed73cdc90c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zones - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target DesignTimeRectangle="330, 313, 389, 50" ElementType="Text" FriendlyName="'Zone Name'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='                 Zone Name             ' check:innerText='Zone Name' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAYkAAAA2CAYAAAAyNmWpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALHSURBVHhe7do9bttAEAbQXCVFihzLUOGTuNBRDOgoNnwDFy5swD4EQ0n8GZI7jEQRIRC/B0zhFUXtNvNxl/5RAUCiC4nXt3ellFJqUHYSAKSEBAApIQFASkgAkBISAKSEBAApIQFASkgAkBISAKSEBAApIQFASkgAkBISAKSEBAApIQFASkgAkBISAKSEBAApIQFA6oaQeKkefv2ufs7V/qW5dmMfh+qum9e+em6GW5+H+/QzgO/sG4bEdF5CAqBs5eOmEBy7Q/XZjG5uHBJ1PTw1n9WEBEDZqiHxvG+b8H31+NEMNvpGnFwTGvmxgff3qmu8I5k0/b8093D93a6ZRwixUkgMfr+pu8NX82ltZr7n676qx13y3aNr1wCwgdVCIoZAfEofN8txddeWGnmo7rqn/eSzc8002UFD7+fTNu5pSORz7pr97Hzv67H493msC8UlawDYwDohEZ+Kx0/9oSH24RGacPtEH+9RGjvdN3yv+51+bBhOwSAk4t/nxn3JcVO3U0jnVovNv71usv6FawDYwAohMf8eImvAk/FxIz8ZN9T5l+WTI51W4d6x6T8X5hh3RoMqhEQ334vGFq4BYAM3hkRo4oX3EEf9Wf0KIRGuKVb3ZD5SvHepWTdziTuC5p5zO4mrQmLpGgA2cFNIxKft9Al4wXFT8brxTuKaZlq8dy2GwanOIdGtq/uNC+d70djCNQBsYHlITBpsoU5NMO42pjXbYCchccExUEkWErX4X0mTkCjVzSGxcA0AG/gHIXE2bMbHGh4/XRoSJ6XfXhgSw2Onfk5xvsdd0mrHTa1r1wCwgRVeXAPwvxISAKSEBAApIQFASkgAkBISAKSEBAApIQFASkgAkBISAKSEBAApIQFASkgAkBISAKSEBAApIQFASkgAkBISAKS6kHh9e1dKKaUGJSSUUkql5bgJgJSQACBRVX8Azo/XJLRBe28AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
