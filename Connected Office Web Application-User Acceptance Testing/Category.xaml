@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Category" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1354,4150" sap2010:WorkflowViewState.IdRef="Category_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="62">
+    <scg:List x:TypeArguments="x:String" Capacity="39">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -99,9 +99,9 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Category" sap:VirtualizedContainerService.HintSize="760,4085" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="dtCategory" />
-      <Variable x:TypeArguments="x:String" Name="nameCategory" />
-      <Variable x:TypeArguments="x:String" Name="descCategory" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtCateg" />
+      <Variable x:TypeArguments="x:String" Name="categoryName" />
+      <Variable x:TypeArguments="x:String" Name="categoryDesc" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -133,15 +133,12 @@
                       <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                     </ActivityAction.Argument>
                     <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="506,300" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="sd:DataTable" Name="dtCategory" />
-                      </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Category&quot;)]" SaveTo="[dtCategory]" />
+                      <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Category&quot;)]" SaveTo="[dtCateg]" />
                     </Sequence>
                   </ActivityAction>
                 </ueab:ExcelApplicationCard.Body>
@@ -151,7 +148,7 @@
         </ActivityAction>
       </ueab:ExcelProcessScopeX.Body>
     </ueab:ExcelProcessScopeX>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCategory]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,3005" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCateg]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,3005" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -165,12 +162,12 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="CategoryName" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[currentRowCategory]">
               <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[nameCategory]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[categoryName]</OutArgument>
               </ui:GetRowItem.Value>
             </ui:GetRowItem>
             <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="CategoryDescription" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="434,196" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[currentRowCategory]">
               <ui:GetRowItem.Value>
-                <OutArgument x:TypeArguments="x:String">[descCategory]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[categoryDesc]</OutArgument>
               </ui:GetRowItem.Value>
             </ui:GetRowItem>
             <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Home Page - Connected Office: Device Management" sap:VirtualizedContainerService.HintSize="434,2286" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Version="V2">
@@ -195,7 +192,7 @@
                         <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Categories" DesignTimeRectangle="534, 244, 30, 30" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl aaname='              ' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='              ' tag='IMG' type='' class='' /&gt;" Guid="5a242061-8971-4ea0-94a5-4af2686ad712" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASNSURBVFhH1ZdZK65RFMfNQ8g8ZUjJFO6lyCdQXLhAocwyluFLcIkyc6V8CBeilJAyJKSMSYkb8zr91nme1/O+3uE56tQ5/9r1tvd+1v7vtf5r7fX6yT+C/4/I+/u73NzcyMrKirS2tkpxcbFERUVJQECAjsjISCksLJTm5mZZXl6W6+tr/cYufBJ5eXmRw8NDGRkZkdTUVPHz89ODg4KCJCQkRMLCwnTwmznW2JOSkiKDg4NycHCgNnzBI5HPz0+5v7+XhYUFycrKEn9/fz0wOTlZSkpK1Cujo6OytLSkY2xsTNrb26W0tFRJsJdvMjMzZWZmRu7u7tSmJ7gl8vHxIefn59Lb26s35LbZ2dnS3d0tW1tbXg2ytrOzI319fZKTk6PfYqOzs1POzs7Utjt8I4IhSLS1temNoqOjpbKyUlZXV40d9rG2tiZVVVUSExOjtpqamuT09NTtRb4RIRx4gg8TEhKkp6dHHh4ejNU/x+PjowwMDEhiYqLaJHyEyRVORBAVmsCVeAISz8/PxurPgV3I4BlsT01NfROwExGyA2ESV8LhyxOk59XVlY63tzdj1j3wTHV1tdrOyMiQ/f19Y+U3HEQwSoriPoRpRxPHx8cyPDysaXp0dGTMesb6+rrk5ubqGXjbWmccRChW1AnSjuywg9nZWY09WiJF7QDSnMF3l5eXxqyFCBWTQkSdIEXtgMPj4+MlNjZW424Hu7u7Wmc4a3Fx0Zi1EKFAISSKlbc6YcVPiGC7vLxcz6qvrzdmLUR4OyjRELKLnxAB/f39EhwcLAUFBcaMhQgPGIqmbLsCUSHMubk5PdwcjY2NEhERoYPf1jX2ImB32TQxMSGhoaH6UJpwEMFViIh3wxWkJ9lhCtMcGCIDGJCxrrGX2mEVpAn0yFmBgYHGzB8QQe0cEBcX5xgcbiViXWMvFfri4sKw8gWTCGeasBUa3Iubcfn09LRjWEPT0NDgtMZeitbr66th5QuTk5MaGr4z4SBSVFSkYuWxswsO+4lYCRlizc/PN2YsRFpaWtRV9BN/O30rKir0rNraWmPWQoT2zuystre3jVnv+AmRvb09R6c3Pz9vzFqI0GOanRV5bgdmiYcMpOyA9yw8PFzFbBWygwi1gswgA+isaGp8AQETb7LD9TV1h83NTdUFYenq6nL/6AEaXXpMsofOiqfbG8gm6gQ3c5cdVjw9PUlNTY1mS3p6uobIqkUnIjQruBjGNDHc1k4H7gvYGBoaUi1hm8rq2nA5EQG0cTS6hMisjr484w14AhK86tjkf8/t7a2x+oVvRHAX3TaNLh/iGTqrjY0NY4d9oAnCgSewVVdXJycnJ247+W9EABvptjs6OtSVaIbOCjHTT3irM6wRf7IDYaIJbOAJTySAWyIAg4SJ+oCAuRGpTYqXlZVpihNr3g0GZZswUqyoE6QoBNLS0mR8fFzD4YkE8EjEBEIjNUnRpKQkLUQcQInmtpBj8Js51thDnUBreMfOPwGfREyQ86QqrzOdFU0NbQBPOYfzgOXl5WnZpmKS0nzjLYxW2Cbyt/GPEBH5BdBg56QgKg34AAAAAElFTkSuQmCC" InformativeScreenshot="992bed74948c45ac3a7f6ce249050c97.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Categories - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Category Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Text="[nameCategory]" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Category Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Text="[categoryName]" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Categories/Create" DesignTimeRectangle="330, 344, 507, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT CategoryName'" FullSelectorArgument="&lt;webctrl id='CategoryName' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CategoryName' tag='INPUT' type='text' class='form-control' aaname='Category Name' /&gt;" Guid="76cbef57-8f56-4af8-a346-3577cf2df5e5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAf8AAAAqCAYAAAC9dVKWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFkSURBVHhe7dmxagJRAETR/P/HhRSxiWBhYSOCjdqsvDDBXRTyA+6cA1Povv4+3Y8BAFQRfwAo8xL/y/U2dvvD+Npsx+f3j5mZmb3x0vN0PX1/tsQ/D3LoeDqPabo/vgUA3lV6nq6n788XgCX+uRnkAACwLul7Oj9b4p9bgV/8ALA+6Xs6P1vin3cDAMA6PXde/AGggPgDQBnxB4Ay4g8AZcQfAMqIPwCUEX8AKCP+AFBG/AGgjPgDQBnxB4Ay4g8AZcQfAMqIPwCUEX8AKCP+AFBG/AGgjPgDQBnxB4Ay4g8AZcQfAMqIPwCUEX8AKCP+AFBG/AGgjPgDQBnxB4Ay4g8AZcQfAMr8G/+vzXZM0/3xCQBYi/Q9nZ8t8d/tD+N4Oj8+AQBrkb6n87Ml/pfr7e9WkAP+AQCA95eep+vpezo/W+IfeZCbQQ7l3YCZmZm979LzdP05/PESfwBg/cQfAKqM8Qvj/PuYeTAYQwAAAABJRU5ErkJggg==" InformativeScreenshot="28a44bd69fce0540f1d5ad7224ae1cbc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create Category - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
@@ -206,7 +203,7 @@
                         </uix:TargetAnchorable>
                       </uix:NTypeInto.Target>
                     </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Category Description'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Text="[descCategory]" Version="V3">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Category Description'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Text="[categoryDesc]" Version="V3">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Categories/Create" DesignTimeRectangle="330, 430, 507, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT CategoryDescripti…'" FullSelectorArgument="&lt;webctrl id='CategoryDescription' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CategoryDescription' tag='INPUT' type='text' class='form-control' aaname='Category Description' /&gt;" Guid="9e2e7f5e-583a-4373-ba43-2a26461be6ca" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAf8AAAAqCAYAAAC9dVKWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFkSURBVHhe7dmxagJRAETR/P/HhRSxiWBhYSOCjdqsvDDBXRTyA+6cA1Povv4+3Y8BAFQRfwAo8xL/y/U2dvvD+Npsx+f3j5mZmb3x0vN0PX1/tsQ/D3LoeDqPabo/vgUA3lV6nq6n788XgCX+uRnkAACwLul7Oj9b4p9bgV/8ALA+6Xs6P1vin3cDAMA6PXde/AGggPgDQBnxB4Ay4g8AZcQfAMqIPwCUEX8AKCP+AFBG/AGgjPgDQBnxB4Ay4g8AZcQfAMqIPwCUEX8AKCP+AFBG/AGgjPgDQBnxB4Ay4g8AZcQfAMqIPwCUEX8AKCP+AFBG/AGgjPgDQBnxB4Ay4g8AZcQfAMr8G/+vzXZM0/3xCQBYi/Q9nZ8t8d/tD+N4Oj8+AQBrkb6n87Ml/pfr7e9WkAP+AQCA95eep+vpezo/W+IfeZCbQQ7l3YCZmZm979LzdP05/PESfwBg/cQfAKqM8Qvj/PuYeTAYQwAAAABJRU5ErkJggg==" InformativeScreenshot="86115cd185d0d6b46ce6eb94071403f4.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Create Category - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
