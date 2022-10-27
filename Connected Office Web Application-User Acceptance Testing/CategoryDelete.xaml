@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CategoryDelete" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1354,2556" sap2010:WorkflowViewState.IdRef="CategoryDelete_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CategoryDelete" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1354,2801" sap2010:WorkflowViewState.IdRef="CategoryDelete_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
       <x:String>System.Activities</x:String>
@@ -95,7 +95,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CategoryDelete" sap:VirtualizedContainerService.HintSize="760,2491" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CategoryDelete" sap:VirtualizedContainerService.HintSize="760,2736" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtCategoryDelete" />
       <Variable x:TypeArguments="x:String" Name="CateName" />
@@ -105,25 +105,25 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="698,918" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="698,958" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="664,822" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence sap:VirtualizedContainerService.HintSize="664,862" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="602,700" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="602,740" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="540,578" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="Connected Office Test Data.xlsx">
+              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="540,618" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="Connected Office Test Data.xlsx">
                 <ueab:ExcelApplicationCard.Body>
                   <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                     <ActivityAction.Argument>
@@ -148,13 +148,13 @@
         </ActivityAction>
       </ueab:ExcelProcessScopeX.Body>
     </ueab:ExcelProcessScopeX>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCategoryDelete]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,1411" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtCategoryDelete]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,1616" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentRowCategoryDelete" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1286" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1491" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -165,23 +165,28 @@
                 <OutArgument x:TypeArguments="x:String">[CateName]</OutArgument>
               </ui:GetRowItem.Value>
             </ui:GetRowItem>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Categories - Connected Office: Device Management" sap:VirtualizedContainerService.HintSize="434,928" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Categories - Connected Office: Device Management" sap:VirtualizedContainerService.HintSize="434,1133" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,702" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,907" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Categories'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Categories" DesignTimeRectangle="8, 377, 292, 40" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Categories'" FullSelectorArgument="&lt;webctrl aaname='Categories' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Categories' tag='A' type='' class='nav-link text-dark' check:innerText='Categories' /&gt;" Guid="cc90baae-23dc-44f9-a184-573d5a9d193f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASgAAAAsCAYAAADW4SW7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANGSURBVHhe7dgxbtswFIfxHqpTp14mQKbcwWuGnCB7lhwgBwjgLQcIkN6hvYAqWu9PkRQpWalcPzvfA35DIsmRB34g803T9fPrz28AODuN5YlAAfBDY3kiUAD80FieCBQAPzSWJwIFwA+N5YlAAfBDY3kiUAD80FieCBQAPzSWJwIFwA+N5YlAAfBDY3kiUAD80FieCBQAPzSWJwIFwA+N5YlAAfBDY3kiUAD80FieCBQAPzSWJwK12v6++/7jZ+++e6ldB/BpGsvTxoH6eOpuDos3t9tX7r1QLw/6Xrfd40f9HgCfo7E8bReoceFOrQnU2/Pt8NzDa/X62bGDAk5GY3naJlAxKsHdU/eWXu8X9PGBeu8e7+xzvAYKwMloLE9bBOq127XiVKjtsm6e34frjeNhvF55Pr1W+4zdfny3/N7knSULYvrca4xmCO0Y43wHlUU6KAI7uc4REZjQWJ42CFQ88iwd5ZLdUeEQj9lALTwbPr/xvMT7kvediIGtBKzXClTzeGuRmsYpIFBASWN5+vdApYtvzf+agriwYxgaR7wYlWRR63f27BiJMRzpu01Cl+72JpFNA9XaKdnvkzDG7x9/N9wz/Z4AajSWp/+5g2rtJHoLgWo+dxAi0AhbdlQLgSp/Xr6vfVSzQM3tyBTUyT3snoAajeVpg0ClR6tiMWfSRWr3HbuDah6hDsJibwWlCE/yrscGKr9vGqj5eNZ2VaPys4GvTmN52uKf5ElUgsqOIyzSuJDj9dpxa2kH1dp5pO9gO5teGo8hBrW/2Zs54i0Fas0OclD/jgBOEqgg2cFUZIGqSWJR7pbKHU0pRmH2qJWEZu6++B4rApXFMadnWzvA44IGfB0ay9NWgRrUIzTuaNKFGhbv9IgX5DEaA1EPQbrI878f/m4jNIvHrTWBGtQipGdr14gTMKWxPG0bKHdWH78AnJPG8nRFgep3RbvGLqjc7QDwSWN5uq5Alcc2YfcEXAaN5enaA8XOCbgkGsvTlf8PCsBF0VieCBQAPzSWJwIFwA+N5YlAAfBDY3kiUAD80FieCBQAPzSWJwIFwA+N5YlAAfBDY3kiUAD80FieCBQAPzSWJwIFwA+N5YlAAfBjmK77C7xAb8Ge2GxkAAAAAElFTkSuQmCC" InformativeScreenshot="7acc0730ac034aa8bd321e925d2b76cd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Categories - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
                     <uix:NClick ClickType="Single" DisplayName="Click 'Motion Sensor'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Categories" DesignTimeRectangle="342, 376, 104, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Motion Sensor'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' /&gt;" Guid="b941050e-2390-4dd1-bdf7-d283e1c4bb76" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGwAAAAZCAYAAADUicu/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJxSURBVGhD7ZdNjvIwDIZH4oqcgWOw6yF6AU7AHdh1ORKbLmZTtpwgEycO2G+ctmIQTFBeKfpE4vjvcTP6vlxTVWrAKlMDVpkasMrUgFWmBqwyNWCV6f3AhtFtdmd3mPh306w0sOnHbXffbrP/cXP9O/Xe5llNfjGw6Xj28Sj/tOoaFgPY2W33c0VcXPdooQHO6E7889UKgwbDOB3HTwDmC+svvKkVJrQfPbTagNGg1fU1WTKBHQb612rs1R08zG6wio9n8rnpBj7yis+oXOzfhJi+4rQgVspz0nbb45UNLEXbeRsSxIYvMtThh1k/rZB/+tNS8JE9y/BxpBipZzJnG5j3TsZZcdTcEByBcZEyMCetfFhwcK94TwzArSHiXrDBIQKxn9LrkerIBk00PG8iD+rNJ/rw5z3elz3g+0YMmUdSEVgozpiu6EQDCxMDtqRsH+GQYC8kazRU7TMwXVAsPBuyTDxctCBOfO4htuyJV8gDa5U1gL1S6WxNDFYZGDfg1pRwlhqrgVEAs1HqjtciMIgpRXapCLPwtcCSErh7PqFRCaZa0EyEag0d3bPsTBC6bjMGawaYFwXgizR992Z8AjCSvlOsQ2gNsKjoW4GTNSg9C1hwRL8JkExIA3vPk/gMYNpvqQ6p9cBY8szM2wv2/wAsFkH/L9ON0MBuz4sMEnzB12IljMXyPRUv2Ih7lp9FYD5HbALmaMWGe4vAvI8uyx0GUsHlL3EpBmsRWA6HVNqjZNLC86iYMC1OGoGRuHF3X9b5A8CUT1pGjllsbbMG2GzuXvcexIU5rwfW9O/VgFWmBqwyNWCVqQGrTA1YVXLuF04DLoYDW5p5AAAAAElFTkSuQmCC" InformativeScreenshot="1a746b37d58895440af0ba8f5cbae9c8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Categories - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target DesignTimeRectangle="330, 313, 281, 50" ElementType="Text" FriendlyName="'Category Name'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='                 Category Name             ' check:innerText='Category Name' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAR0AAAA2CAYAAAD6dk06AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPISURBVHhe7dlBTuswEMbxd5W3eAuOVbHgJF30KJV6lCJuwIIFSHCI4KSxPR6PE2iaES/8f9JIkKaNHTJfnPKnAwBHKXSeX14piqJWL1Y6AFwROgBcEToAXBE6AFwROgBcEToAXBE6AFwROgBcEToAXBE6AFwROgBcEToAXBE6AFwROgBcEToAXBE6AFwROgBcEToAXBE6AFzdKHQ+uuP9Xff3n6rD0/j6L3Y+5PNxf+rex83R46H9GrBFy0NHNpWu74TO26nbDe87dI/jpk1Q52d3+hhfuCB08NssC50UFH09dMe3cfvgqdt/I3TeTw/j52w7dPR5InTw2ywKndQwVeAo1mooNVnj0Uw0YQ6ksXSYFeF31+3PIfDGn8uVhXEs1ewyBB7jccPx8hjKuabtrdBIc3/odvHYYvxW6OTzmkvOowzoPNc0tsmbQaDO1+aCHj/agtARF/vMiqYKjVhDo02HjtWAQ8VjVg1UVmrWyf1y05nH648l3p8DII9dPzYlInSOb/mc7c+Xl+vQaZyPUPEYMgBTkMW6D9vk78M2EYjWDWAoggc+rg8d2cQzoVMpGvGyqbx7j8QxYpPmbZf9ckjk98mQi41q7WcFiQyddMxRFRDp/cZqItJzTb+r8ctgUPQ+cn5VeIVqz1kEWvqb5W16vsAaXFY6RUAVNRM6zbtyX/17rSbq6cer1n719rpRBRUgacxT868CtjymFToyVIqqQieP8Wvb5KNYXTGsgDUtCB3RPFaDJvJCH/erGnGuaeyS391Mh05rv4nQMVceef/9Wf48vmwx5mqGcDyeDNrGmK4OnWb4j1WcG2Adi75ILkMhX+yD/gLvL+J0oVvNMB06sgHtxraDT46r/agRiCas9jNDR3x2+u5EzVuzQicoz13/eSpQUgCIOS4NnWb4An4WhU4vN7NRRehYJRpR3uH7GhpMhkpZ6VFAv09V2m9yHLlR50Kn+py55m2EThmYoapAMWpx6Ex8fmu+wI0tDp1Bo6HT6kQGQ39xNxqxCDDRBFawpTAJykbqG0w/XkXiTh9LhcZs6AR5PDpIDM3QCeR5a8y3H78e05LQGVhBPTFf4JZuEzo/jWiqNf4j85VgAmD7/0MnrBb2zdWMusPfglidlKsoAF+xidBpfVdz01WOfiRhlQNcZaOhs8IKR4YOgQNcbZvf6QD4sQgdAK4IHQCuCB0ArggdAK4IHQCuCB0ArggdAK4IHQCuCB0ArggdAK4IHQCuCB0ArggdAK5S6Dy/vFIURa1ehA5FUa7F4xUAV4QOAEdd9wkCY+zoP98CtQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>

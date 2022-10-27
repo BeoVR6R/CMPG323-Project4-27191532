@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DeviceDelete" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1354,2556" sap2010:WorkflowViewState.IdRef="DeviceDelete_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DeviceDelete" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1354,2761" sap2010:WorkflowViewState.IdRef="DeviceDelete_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
       <x:String>System.Activities</x:String>
@@ -97,7 +97,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DeviceDelete" sap:VirtualizedContainerService.HintSize="760,2491" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DeviceDelete" sap:VirtualizedContainerService.HintSize="760,2696" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtDeviceDelete" />
       <Variable x:TypeArguments="x:String" Name="deviceNme" />
@@ -150,13 +150,13 @@
         </ActivityAction>
       </ueab:ExcelProcessScopeX.Body>
     </ueab:ExcelProcessScopeX>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDeviceDelete]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,1411" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtDeviceDelete]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="698,1616" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentRowDeviceDelete" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1286" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1491" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -167,23 +167,28 @@
                 <OutArgument x:TypeArguments="x:String">[deviceNme]</OutArgument>
               </ui:GetRowItem.Value>
             </ui:GetRowItem>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Devices - Connected Office: Device Management" sap:VirtualizedContainerService.HintSize="434,928" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Devices - Connected Office: Device Management" sap:VirtualizedContainerService.HintSize="434,1133" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,702" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,907" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ClickType="Single" DisplayName="Click 'Devices'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Devices" DesignTimeRectangle="8, 450, 292, 40" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Devices'" FullSelectorArgument="&lt;webctrl aaname='Devices' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Devices' tag='A' type='' class='nav-link text-dark' check:innerText='Devices' /&gt;" Guid="0c7e9248-9661-4f1c-b62f-55f60689608c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASgAAAAsCAYAAADW4SW7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK1SURBVHhe7dixbdtQFIXhDOUqlZcx4Mo7uFWhCdyr8QAewIA7D2DA2SFZ4EUUz6EuHx8FAyHpq+A/wFdElMSkyI9H/fDKcb/+/AaAb+cpTwQKQB6e8kSgAOThKU8ECkAenvJEoADk4SlPBApAHp7yRKAA5OEpTwQKQB6e8kSgAOThKU8ECkAenvJEoADk4SlPBApAHp7yRKAA5OEpTwQKQB6e8kSgAOThKU8ECkAenvJ0vYF6f74vNz9vy83Dobw3rgO4Pp7ytEygXvbHUHSxaHh8a3/m33yUpwffY1demu8BcG085Wn9QPWWjwgnKOD/4ylPCwdqFIt4yjnav44+AwA1T3laM1Cd+Uex+tR19/zRX3vbDa/Fx8PhxKTvmbvn+X0W7vt5KHdz1zrh3rbOIyqAFk95WjtQMRj35emze606WQV9pML14dQ1fa11zzp6PUWoEZ+vXCdQwHY85ekbAjWEwMEKr+nzk9+XwsnHwZjcMwRmOI2dvutwDNDl6HXfWZ/Q/HkA2/GUp+0Ddf5zi+IwBKmKWvj++p6XA/NaHk/X2k5Bmzz+cXoCtuYpT2sHKoRB14b3Nk0fA7t4+DPxZFTf8/y9jUA14jMynKoaIePHfWAznvK0ZqDG/9kdl/pEFb8nGt633+l7xu+f3PPiI174u3wxOO1/E4A1ecrTwoGaM4rC/OPW6JGqPvVUoZgGJPzONNKfqGYfLfX5uesxdgDW5SlPawdq7gfndkzGv/mM31P/HjR3wpn8XeL1cMqqr7cCRZyAbXnK0zKBAoAleMoTgQKQh6c8ESgAeXjKE4ECkIenPBEoAHl4yhOBApCHpzwRKAB5eMoTgQKQh6c8ESgAeXjKE4ECkIenPBEoAHl4yhOBApCHpzwRKAB5eMoTgQKQh6c8ESgAeXjKE4ECkEe/Uv4CbylqFxwesI8AAAAASUVORK5CYII=" InformativeScreenshot="6e18f86e7c39dfa668968f59ca419988.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Devices - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
                     <uix:NClick ClickType="Single" DisplayName="Click 'Front-door Camera'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2cc3729a-f3a4-4dca-8b76-ad4e18cc584d" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="https://connectedoffice-devicemanagement.azurewebsites.net/Devices" DesignTimeRectangle="342, 351, 136, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Front-door Camera'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' /&gt;" Guid="a7005a0a-8f39-4174-b3e0-9cf418472540" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIwAAAAZCAYAAADja8bOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKTSURBVGhD7ZhBbsIwEEU5Tg/Qk7DgHt1VYssxsuUELJDYdFGUJRJbLoAEh3BtZ5zMjCexTdISqnmSVeHEM/PHP07UhVGUAtQwShFqGKUINYxShBpGKUINoxShhlGK+H+GOR/NYnU0NfxUpoUa5nYyy9XONpyO5f4ON7wAszLMxWyifr62mQXDHMz2Br//mik2eyaGue4Pto64l3X1xP5OgBrmN5jVKTctRYapK3ukVpfmL3lV3c12jY/dndmc4RIQ1jZPXriva2qIKV0bgq6za8TN4q8GSWO+hlg/pomT9RrnnwDrk7nCJQfP1+WktUq5aF+o3l4diXoc5YaxgWgjYTNsAS2QGAuJigui8brCJ9PHxKJawSiGUEuTB+so08CNREj0EFNXWGvcjygf1B3PyYZoYff06UjV48j46GWJmOv8iSE4kc9LayOD8N9D9G0MixE1D8DzozRwfF2ZGhhiPlK7tInNHD0leH56T5YOi9SXh15JGDdHnt4AK1xam2UYP2fXhhEEuHlJNInRNEo8EdD6URo4iR5yfExJX7g2ZA4Pm+P9QoMYpkfHUD2O+RumD7ThBBLjCYaB15uYE+Nj03i5J0zSMFJfEKKOjHocow0jBXWkxVu4QfjvIfy9ca0+b8Ym4/lRGgT8fUI8jJQznS/DMIk9dEg6cupxjDbM0AcjfsrEtdwgGWI7mkYRQZA3jsmaHJlthAYRqE0wf/t/GFE71fOQYaS+WPAHbf5exHEmMIwDGt6OOEZWkRZ/n48RNzsmbAwMJ06I2YpvhxT7QQ0D+CeUxKTrO6122NrrKU4YD+uLHfh6n45UPQ5qGEVJ0Brm7eOLOFKHjjDeP7/BJXrCKIWoYZQi1DBKEWoYpQBjfgA3geDvpqbiagAAAABJRU5ErkJggg==" InformativeScreenshot="f075c383379e7f43edc57b7c879ed3cc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Devices - Connected Office: Device Management' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                               <uix:Target DesignTimeRectangle="330, 288, 262, 50" ElementType="Text" FriendlyName="'Device Name'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='                 Device Name             ' check:innerText='Device Name' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQoAAAA2CAYAAAA/BNerAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMHSURBVHhe7ddBbuowEMbxd5Uu3qLHQiw4SRc5SqUcpag36KKLVqKH8EvI2BnbE0YEB72K/0+aBU6IY8R8cf4EAHCkoPj4/KIoijKLHQUAF0EBwEVQAHARFABcBAUAF0EBwEVQAHARFABcBAUAF0EBwEVQAHARFABcBAUAF0EBwEVQAHARFABcBAUAF0EBwPXrguLUH8LT3+fwtO/DScYAbOu2oHjrpqa1qnuXk1r6Ca/7OEcXjjLa3Hcfdmkt9TwprLa8B+A/sl1QSL28ybmN3GVHkQXFUEXoERR4NI2C4hBev2VsMDfSL22mMiiG0oFHUODRbBIUIx0WdpNJxae12p1caspjJ98rdhTVdbMmfg8v2bH6fjMqKHZ7ua6azwwKa3el71Fdc1xfWsdQu/5nOEG/VsUx7co1AA1tFhRZs8mfXjdHVuewUI2Stvr1mBUU9nWliY3dwVQXGi1r6vke4jqsoKiDSirepxU+qQ7DmP48jaX7W7MGoKH7BUXWfOU5U8OlZjOaK36nCgr1JNdP4VPfn695KVjqp7Yo502fp3WaO4pS+duoa1q7KGs9i2tWY4trABq6X1DopqiqbCb5HL9jNEgcu9y0+Xa+qrRzKZRBMdDzHq05dRBkVQdFHZSXxlauAWhos6BIjSXHFrfmUmVTjOFiPTXLoJjnsYKifK8vSgVQxmpg81pxTn1MxsrfZnVQrFwD0NAmQTE3r/ojqx3F3Hy1FChdJw2ycG3jujpQplcP9TS+pqHMoBiouaaSUEjnz2E1B+OtQbFyDUBDjYJiqfRTfnkLnb1nq0Y5V9EcVVAsXrd8si8ct1gNLLIQrILCqluDYrBmDUBDmwVF2WBR3mhTZUFRNP5ioy4FSCx93GzkdUFhvmaM9G8xzp0+NwiK0bVrABq6LSgAPASCAoCLoADgIigAuAgKAC6CAoCLoADgIigAuAgKAC6CAoCLoADgIigAuAgKAC6CAoCLoADgIigAuAgKAC6CAoArBcXH5xdFUZRZBAVFUW7x6gHARVAAcITwD6K1+lzVPUUZAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
                             </scg:List>
                           </uix:TargetAnchorable.Anchors>
